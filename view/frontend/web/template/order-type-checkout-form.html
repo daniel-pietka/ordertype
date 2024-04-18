@@ -1,0 +1,7 @@
+<form id="order-type-checkout-form" class="form form-order-type" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}, event: {change: onFormChange()}">
+    <fieldset class="fieldset order-type">
+        <!-- ko foreach: getRegion('order-type-checkout-form-fields') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+    </fieldset>
+</form>

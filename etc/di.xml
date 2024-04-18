@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="order_type_listing_data_source" xsi:type="string">DanielPietka\OrderType\Model\ResourceModel\Type\Grid\Collection</item></argument>
+        </arguments>
+    </type>
+    <virtualType name="DanielPietka\OrderType\Model\ResourceModel\Type\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">order_type</argument>
+            <argument name="resourceModel" xsi:type="string">DanielPietka\OrderType\Model\ResourceModel\Type</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="order_type_layout_processor" type="DanielPietka\OrderType\Plugin\Block\LayoutProcessor" sortOrder="1"/>
+    </type>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="order_type_id" xsi:type="string">sales_order.order_type_id</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <preference for="DanielPietka\OrderType\Api\Data\OrderTypeInterface" type="DanielPietka\OrderType\Model\OrderType" />
+    <preference for="DanielPietka\OrderType\Api\Data\TypeInterface" type="DanielPietka\OrderType\Model\Type" />
+    <preference for="DanielPietka\OrderType\Api\OrderTypeGuestRepositoryInterface" type="DanielPietka\OrderType\Model\OrderTypeGuestRepository" />
+    <preference for="DanielPietka\OrderType\Api\OrderTypeRepositoryInterface" type="DanielPietka\OrderType\Model\OrderTypeRepository" />
+    <preference for="DanielPietka\OrderType\Api\TypeRepositoryInterface" type="DanielPietka\OrderType\Model\TypeRepository" />
+</config>

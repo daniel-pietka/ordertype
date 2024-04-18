@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="DanielPietka_OrderType::type" title="Order Types" translate="title" module="DanielPietka_OrderType" sortOrder="900" parent="Magento_Sales::sales_operation" action="order_type/type" resource="DanielPietka_OrderType::type"/>
+    </menu>
+</config>

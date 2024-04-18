@@ -1,0 +1,11 @@
+<?php
+/**
+ * @var \DanielPietka\OrderType\Block\Order\OrderTypeInfo $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+
+$orderTypeLabel = $block->getOrderTypeLabel();
+?>
+<?php if ($orderTypeLabel !== null): ?>
+<span class="order-type-info"><?= $escaper->escapeHtml($orderTypeLabel) ?></span>
+<?php endif; ?>
